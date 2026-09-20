@@ -30,15 +30,15 @@
         <button class="nav-item" data-view="sources"><span>◉</span> Sources</button>
         <button class="nav-item" data-view="settings"><span>⚙</span> Settings</button>
         <div class="private-note"><span>◈</span><div><strong>Private by default</strong><small>Your data stays on this device</small></div></div>
-        <div class="profile"><div class="avatar" id="profileInitials">CM</div><div><strong id="profileName">Chaya M.</strong><small>Personal workspace</small></div><button id="signOut" title="Sign out">↗</button></div>
+        <div class="profile"><div class="avatar" id="profileInitials">--</div><div><strong id="profileName">Your workspace</strong><small>Personal workspace</small></div><button id="signOut" title="Sign out">↗</button></div>
       </div>
     </aside>
 
     <main id="mainContent">
-      <header class="topbar"><button class="mobile-menu">☰</button><div class="date"><span id="dateLabel">Saturday, September 20</span><em>Today</em></div><div class="top-actions"><button class="icon-btn" title="Search">⌕</button><button class="icon-btn" title="Notifications">♢</button><button class="add-btn" id="addTask">＋ <span>Add task</span></button></div></header>
+      <header class="topbar"><button class="mobile-menu">☰</button><div class="date"><span id="dateLabel">Today</span><em>Today</em></div><div class="top-actions"><button class="icon-btn" title="Search">⌕</button><button class="icon-btn" title="Notifications">♢</button><button class="add-btn" id="addTask">＋ <span>Add task</span></button></div></header>
       <section class="page-header">
-        <div><p class="eyebrow">YOUR FOCUS, CURATED</p><h1>Good morning, Chaya.</h1><p class="subhead"><strong id="attentionCount">5 things</strong> need your attention today.</p></div>
-        <div class="focus-score"><div class="score-ring"><span>84</span></div><div><p>Focus score</p><small>You're ahead of schedule</small></div></div>
+        <div><p class="eyebrow">YOUR FOCUS, CURATED</p><h1>Good morning, <span id="greetingName">there</span>.</h1><p class="subhead"><strong id="attentionCount">0 things</strong> need your attention today.</p></div>
+        <div class="focus-score"><div class="score-ring"><span id="focusNumber">—</span></div><div><p>Focus score</p><small id="focusCopy">Add tasks or connect a source</small></div></div>
       </section>
       <div class="feed-controls"><div class="tabs"><button class="tab active" data-filter="all">All <span id="allCount">5</span></button><button class="tab" data-filter="urgent">Act now <span id="urgentCount">1</span></button><button class="tab" data-filter="upcoming">Upcoming <span id="upcomingCount">2</span></button><button class="tab" data-filter="later">Later <span id="laterCount">2</span></button></div><button class="sort-btn">⇅ Priority <span>⌄</span></button></div>
       <div id="feed"></div>
