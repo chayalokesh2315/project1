@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signal — Smart Priority Inbox</title>
+  <meta name="theme-color" content="#6556d3" />
+  <meta name="description" content="A private, prioritized task inbox." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="signal-icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <section class="auth-screen" id="authScreen">
+    <div class="auth-art"><div class="brand"><span class="brand-mark">S</span><span>signal</span></div><div class="auth-copy"><p class="eyebrow">YOUR ATTENTION, PROTECTED</p><h1>Make room for<br>what matters.</h1><p>Signal turns the notifications you choose to share into one calm, prioritized plan.</p><div class="privacy-chip">◈ Your notification data is private by default</div></div></div>
+    <div class="auth-panel"><div class="auth-card"><p class="eyebrow" id="authEyebrow">WELCOME BACK</p><h2 id="authTitle">Your day, in focus.</h2><p class="auth-sub" id="authSub">Sign in to see your personal priority inbox.</p><form id="authForm"><label>Name<input id="nameInput" required placeholder="Your name" autocomplete="name"></label><label>Email<input id="emailInput" required type="email" placeholder="you@example.com" autocomplete="email"></label><label>Password<input id="passwordInput" required type="password" placeholder="At least 8 characters" minlength="8" autocomplete="current-password"></label><button class="save-task" id="authSubmit">Create my account</button></form><p class="auth-switch" id="authSwitch">Already have an account? <button type="button">Sign in</button></p><p class="demo-note">Prototype mode — account details remain in this browser only.</p></div></div>
+  </section>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">S</span><span>signal</span></div>
+      <nav>
+        <button class="nav-item active" data-view="inbox"><span>⌁</span> Smart inbox <b id="navCount">5</b></button>
+        <button class="nav-item" data-view="snoozed"><span>◷</span> Snoozed</button>
+        <button class="nav-item" data-view="completed"><span>✓</span> Completed</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button class="nav-item" data-view="sources"><span>◉</span> Sources</button>
+        <button class="nav-item" data-view="settings"><span>⚙</span> Settings</button>
+        <div class="private-note"><span>◈</span><div><strong>Private by default</strong><small>Your data stays on this device</small></div></div>
+        <div class="profile"><div class="avatar" id="profileInitials">CM</div><div><strong id="profileName">Chaya M.</strong><small>Personal workspace</small></div><button id="signOut" title="Sign out">↗</button></div>
+      </div>
+    </aside>
+
+    <main id="mainContent">
+      <header class="topbar"><button class="mobile-menu">☰</button><div class="date"><span id="dateLabel">Saturday, September 20</span><em>Today</em></div><div class="top-actions"><button class="icon-btn" title="Search">⌕</button><button class="icon-btn" title="Notifications">♢</button><button class="add-btn" id="addTask">＋ <span>Add task</span></button></div></header>
+      <section class="page-header">
+        <div><p class="eyebrow">YOUR FOCUS, CURATED</p><h1>Good morning, Chaya.</h1><p class="subhead"><strong id="attentionCount">5 things</strong> need your attention today.</p></div>
+        <div class="focus-score"><div class="score-ring"><span>84</span></div><div><p>Focus score</p><small>You're ahead of schedule</small></div></div>
+      </section>
+      <div class="feed-controls"><div class="tabs"><button class="tab active" data-filter="all">All <span id="allCount">5</span></button><button class="tab" data-filter="urgent">Act now <span id="urgentCount">1</span></button><button class="tab" data-filter="upcoming">Upcoming <span id="upcomingCount">2</span></button><button class="tab" data-filter="later">Later <span id="laterCount">2</span></button></div><button class="sort-btn">⇅ Priority <span>⌄</span></button></div>
+      <div id="feed"></div>
+      <section class="permission-banner" id="permissionBanner"><div class="permission-icon">◉</div><div><p class="eyebrow">CONNECT YOUR PHONE</p><h3>Ready to bring in your approved alerts?</h3><p>Install the Signal Android app, then choose exactly which apps Signal may include. You can change this anytime.</p></div><button id="openSources">Review sources</button></section>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <dialog id="taskDialog"><form method="dialog" class="task-form"><button class="close" value="cancel">×</button><p class="eyebrow">MANUAL TASK</p><h2>Add something to your inbox</h2><label>What needs doing?<input id="taskTitle" placeholder="e.g. Book dentist appointment" required></label><label>When is it due?<select id="taskDue"><option value="today">Today</option><option value="tomorrow" selected>Tomorrow</option><option value="week">This week</option></select></label><label>Priority<select id="taskPriority"><option value="upcoming">Upcoming</option><option value="urgent">Act now</option><option value="later">Later</option></select></label><button class="save-task" id="saveTask" value="default">Add to inbox</button></form></dialog>
+  <script src="app.js"></script>
+  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');</script>
+</body>
+</html>

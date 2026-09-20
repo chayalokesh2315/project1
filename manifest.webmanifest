@@ -1,0 +1,12 @@
+{
+  "name": "Signal — Smart Priority Inbox",
+  "short_name": "Signal",
+  "description": "A private, prioritized task inbox.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f6f2",
+  "theme_color": "#6556d3",
+  "icons": [
+    { "src": "signal-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
