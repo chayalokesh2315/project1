@@ -47,6 +47,7 @@
   </div>
   <div class="toast" id="toast"></div>
   <dialog id="taskDialog"><form method="dialog" class="task-form"><button class="close" value="cancel">×</button><p class="eyebrow">MANUAL TASK</p><h2>Add something to your inbox</h2><label>What needs doing?<input id="taskTitle" placeholder="e.g. Book dentist appointment" required></label><label>When is it due?<select id="taskDue"><option value="today">Today</option><option value="tomorrow" selected>Tomorrow</option><option value="week">This week</option></select></label><label>Priority<select id="taskPriority"><option value="upcoming">Upcoming</option><option value="urgent">Act now</option><option value="later">Later</option></select></label><button class="save-task" id="saveTask" value="default">Add to inbox</button></form></dialog>
+  <dialog id="sourceDialog"><form method="dialog" class="task-form" id="sourceForm"><button class="close" value="cancel">×</button><p class="eyebrow">ADD A MONITORED APP</p><h2>Add an app you use</h2><p class="auth-sub">Signal will show it as a requested source. It will not receive any data unless a secure web integration is available and you approve it.</p><label>App or service name<input id="sourceName" placeholder="e.g. Slack, Notion, Trello" required></label><button class="save-task" value="default">Add to my sources</button></form></dialog>
   <script src="app.js"></script>
   <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');</script>
 </body>
