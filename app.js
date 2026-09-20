@@ -1,12 +1,3 @@
-const sampleTasks = [
- {id:1,section:'urgent',title:'Interview preparation',description:'Interview starts tomorrow at 10:00 AM',sources:['Gmail','Calendar'],alerts:2,icon:'✦',tone:'',due:'In 21 hours',why:'The event is tomorrow and an interview is marked as high importance.'},
- {id:2,section:'upcoming',title:'Assignment 2',description:'Submit assignment before tomorrow, 11:59 PM',sources:['College portal'],alerts:3,icon:'▤',tone:'orange',due:'Due tomorrow',why:'Three related alerts were grouped. The deadline is less than 36 hours away.'},
- {id:3,section:'upcoming',title:'Review design feedback',description:'6 comments waiting in the project review',sources:['Figma'],alerts:6,icon:'◈',tone:'',due:'Today',why:'A teammate marked this thread as needing your response.'},
- {id:4,section:'later',title:'Bank transaction alert',description:'₹1,250 debited from your account',sources:['HDFC Bank'],alerts:1,icon:'₹',tone:'green',due:'Received 1h ago',why:'Financial alerts are included in your important source rules.'},
- {id:5,section:'later',title:'Other messages',description:'18 group messages are ready when you are',sources:['WhatsApp'],alerts:18,icon:'◌',tone:'',due:'Quietly grouped',why:'Group conversations are set to low priority in your preferences.'}
-];
-// A new user starts with no imported notification data. sampleTasks is retained only
-// as design reference data and is never rendered or stored for a user.
 let tasks = [];
 let current='all', completed=[], snoozed=[];
 const labels={urgent:'ACT NOW',upcoming:'UPCOMING',later:'LATER'};
